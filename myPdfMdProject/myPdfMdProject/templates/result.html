@@ -1,0 +1,43 @@
+<!-- templates/result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversion Result</title>
+    <style>
+    .download-btn {
+        background-color: #138921; /* green color */
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none; /* Remove underline from link */
+        display: inline-block;
+        transition: background-color 0.3s ease;
+    }
+
+    .download-btn:hover {
+        background-color: #218838; /* Darker green on hover */
+    }
+    .download-btn:active {
+        background-color: #1e7e34;
+        transform: translateY(1px);
+    }
+</style>
+
+</head>
+<body>
+    <h2>Generated Markdown Preview:</h2>
+<pre>{{ md_content }}</pre>
+
+<a href="{% url 'download_md' %}">
+    <button class="download-btn">Download .md File</button>
+</a>
+<br><br>
+<a href="{% url 'upload_file' %}" style="text-decoration: underline; color: #d24e59;">Upload another file</a>
+</body>
+</html>
