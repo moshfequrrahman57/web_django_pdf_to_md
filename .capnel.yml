@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/dikkhain/your_project_folder/
+    - export DEPLOYPATH=/home/dikkhain/web_django_pdf_to_md/
     - /bin/cp -R * $DEPLOYPATH
