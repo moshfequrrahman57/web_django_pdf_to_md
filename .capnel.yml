@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/dikkhain/myPdfProject/
+    - export DEPLOYPATH=/home/dikkhain/myPdfmdProject/
     - /bin/cp -R * $DEPLOYPATH
