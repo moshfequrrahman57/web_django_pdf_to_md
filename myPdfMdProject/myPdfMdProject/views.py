@@ -7,6 +7,7 @@ from .utils.converter import convert_pdf_to_md
 
 from django.http import FileResponse
 from django.shortcuts import render 
+from django.http import HttpResponse
 
 def home(request):
     return render(request, "home.html")
@@ -37,8 +38,9 @@ def upload_file(request):
 def download_md(request):
     md_content = request.session.get('md_content', '')
     
-    # Create an in-memory file to avoid saving to disk
-    buffer = io.BytesIO(md_content.encode('utf-8'))
-    response = FileResponse(buffer, as_attachment=True, filename='generated.md')
+    response = HttpResponse(md_content, content_type='text/markdown')
+    response['Content-Disposition'] = 'attachment; filename="converted.md"'
     return response
+
+
 

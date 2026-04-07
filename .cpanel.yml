@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/dikkhain/myPdfmdProject/
+    - export DEPLOYPATH=/home/dikkhain/cpanel_folder/
     - /bin/cp -R * $DEPLOYPATH
